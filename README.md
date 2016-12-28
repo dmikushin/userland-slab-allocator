@@ -26,7 +26,7 @@ When deallocating an object, the location of the corresponding slab is quickly
 found by masking the passed object pointer with the alignment mask of the
 corresponding slab chain.
 
-![alt tag](https://raw.github.com/bbu/userland-slab-allocator/master/screenshot.png)
+![alt tag](https://raw.github.com/dmikushin/userland-slab-allocator/master/screenshot.png)
 
 ## License
 
