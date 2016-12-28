@@ -1,8 +1,20 @@
-## Slab Allocator
+## CPU/CUDA Slab Allocator for userspace
 
-This is a carefully optimised slab allocator for userspace. It relies on 
-anonymous `mmap(2)` page allocations, or occassionally on `posix_memalign(3)`
-for larger objects.
+This fork provides a basic implementation of Slab Allocator on CPU in
+userspace as well as on CUDA GPUs on top of preallocated GPU memory space.
+
+Usage:
+
+```
+$ make
+$ ./slab cpu
+$ ./slab gpu
+```
+
+On CPU implementation relies on anonymous `mmap(2)` page allocations,
+or occassionally on `posix_memalign(3)` for larger objects.
+
+On GPU slabs are created in memory space preallocated with `cudaMalloc`.
 
 Bit-vectors are used to indicate whether the corresponding slots are free
 and that makes the allocations and deallocations very quick most of the time.
